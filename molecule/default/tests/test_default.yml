@@ -1,0 +1,14 @@
+---
+package:
+  resilio-sync:
+    installed: true
+ports:
+  tcp:8888:
+    listening: true
+service:
+  resilio-sync:
+    enabled: true
+    running: true
+process:
+  rslsync:
+    running: true
