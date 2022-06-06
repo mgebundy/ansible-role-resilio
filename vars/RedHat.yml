@@ -1,0 +1,6 @@
+---
+resilio_dependencies: []
+
+resilio_signing_key: "https://linux-packages.resilio.com/resilio-sync/key.asc"
+resilio_repository: "https://linux-packages.resilio.com/resilio-sync/rpm/$basearch/"
+resilio_pkg: resilio-sync

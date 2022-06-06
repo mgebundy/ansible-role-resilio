@@ -1,0 +1,17 @@
+---
+- name: Add package signing key.
+  ansible.builtin.rpm_key:
+    key: '{{ resilio_signing_key }}'
+    state: present
+
+- name: Add dnf repository.
+  ansible.builtin.yum_repository:
+    name: resilio-sync
+    description: "Resilio Sync repo"
+    baseurl: https://linux-packages.resilio.com/resilio-sync/rpm/$basearch/
+    gpgcheck: false
+
+- name: Install resiliso-sync
+  ansible.builtin.dnf:
+    name: '{{ resilio_pkg }}'
+    state: present

@@ -1,0 +1,17 @@
+---
+- name: Add package signing key.
+  ansible.builtin.apt_key:
+    url: '{{ resilio_signing_key }}'
+    state: present
+
+- name: Add debian repository.
+  ansible.builtin.apt_repository:
+    repo: '{{ resilio_repository }}'
+    state: present
+    filename: resilio-sync
+    update_cache: true
+
+- name: Install resiliso-sync
+  ansible.builtin.apt:
+    name: '{{ resilio_pkg }}'
+    state: present

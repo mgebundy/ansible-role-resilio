@@ -1,0 +1,16 @@
+---
+- name: Configure Resilio Sync.
+  ansible.builtin.template:
+    src: rslsync.conf.j2
+    dest: /etc/rslsync.conf
+    owner: "rslsync"
+    group: "rslsync"
+    mode: 0600
+  notify: "restart resilio-sync"
+
+- name: Enable Resilio Snyc
+  ansible.builtin.systemd:
+    name: resilio-sync
+    state: started
+    enabled: true
+  when: ansible_service_mgr == "systemd"
