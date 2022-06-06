@@ -1,0 +1,18 @@
+---
+galaxy_info:
+  role_name: resilio
+  author: buengese
+  description: Ansible Role - Resilio Sync
+  license: MIT
+  min_ansible_version: "2.4"
+  platforms:
+    - name: Ubuntu
+      versions:
+        - focal
+    - name: Debian
+      versions:
+        - buster
+        - bullseye
+    - name: Fedora
+      versions:
+        - '35'
