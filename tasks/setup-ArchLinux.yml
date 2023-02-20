@@ -1,0 +1,5 @@
+---
+- name: Install resiliso-sync
+  ansible.builtin.package:
+    name: '{{ resilio_pkg }}'
+    state: present
