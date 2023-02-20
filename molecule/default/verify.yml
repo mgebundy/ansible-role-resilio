@@ -1,4 +1,5 @@
 ---
+# code: language=ansible
 # This is an example playbook to execute goss tests.
 # Tests need distributed to the appropriate ansible host/groups
 # prior to execution by `goss validate`.

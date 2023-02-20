@@ -1,4 +1,5 @@
 ---
+# code: language=ansible
 - name: Add package signing key.
   ansible.builtin.rpm_key:
     key: '{{ resilio_signing_key }}'

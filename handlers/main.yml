@@ -1,5 +1,6 @@
 ---
-- name: restart resilio-sync
+# code: language=ansible
+- name: Restart resilio-sync
   ansible.builtin.service:
     name: resilio-sync
     state: restarted

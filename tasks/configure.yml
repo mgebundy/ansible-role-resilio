@@ -1,4 +1,5 @@
 ---
+# code: language=ansible
 - name: Configure Resilio Sync.
   ansible.builtin.template:
     src: rslsync.conf.j2
@@ -6,7 +7,7 @@
     owner: "rslsync"
     group: "rslsync"
     mode: 0600
-  notify: "restart resilio-sync"
+  notify: Restart resilio-sync
 
 - name: Enable Resilio Snyc
   ansible.builtin.systemd:

@@ -1,4 +1,5 @@
 ---
+# code: language=ansible
 - name: Add package signing key.
   ansible.builtin.apt_key:
     url: '{{ resilio_signing_key }}'
