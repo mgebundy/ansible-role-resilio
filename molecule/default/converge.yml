@@ -5,3 +5,10 @@
   become: true
   roles:
     - ansible-role-resilio
+  pre_tasks:
+    - name: Install netstat on Fedora
+      ansible.builtin.package:
+        name: net-tools
+        state: present
+      when:
+        - ansible_pkg_mgr == "dnf"
