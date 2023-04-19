@@ -3,7 +3,7 @@
 - name: Configure Resilio Sync.
   ansible.builtin.template:
     src: rslsync.conf.j2
-    dest: /etc/rslsync.conf
+    dest: /etc/resilio-sync/config.json
     owner: "rslsync"
     group: "rslsync"
     mode: 0600
