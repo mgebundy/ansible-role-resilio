@@ -12,6 +12,8 @@
 
 - ansible.builtin.include_tasks: prepare.yml
 
+- ansible.builtin.import_tasks: configure.yml
+
 - ansible.builtin.include_tasks: setup-RedHat.yml
   when: ansible_os_family == 'RedHat' or ansible_os_family == 'Rocky'
 
@@ -21,4 +23,9 @@
 - ansible.builtin.include_tasks: setup-Archlinux.yml
   when: ansible_os_family == 'Archlinux'
 
-- ansible.builtin.import_tasks: configure.yml
+- name: Enable Resilio Snyc
+  ansible.builtin.systemd:
+    name: resilio-sync
+    state: started
+    enabled: true
+  when: ansible_service_mgr == "systemd"
