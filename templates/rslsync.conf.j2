@@ -5,9 +5,9 @@
   "pid_file" : "/var/run/resilio-sync/sync.pid",
 
 
-  "webui": {
+  "webui": { 
     "listen" : "{{ webui_listen }}",
-    "force_https": {{ force_https }}
+    "force_https": {{ force_https | bool }},
   }
 
 }
