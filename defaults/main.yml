@@ -4,3 +4,4 @@ device_name: '{{ inventory_hostname_short }}'
 force_https: true
 webui_listen: '127.0.0.1:8888'
 storage_path: '/var/lib/resilio-sync'
+directory_root: '/home/rslsync/Resilio Sync'
