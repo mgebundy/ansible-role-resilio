@@ -1,6 +1,6 @@
 ---
 # code: language=ansible
-- name: Install resiliso-sync
+- name: Install resilio-sync
   ansible.builtin.package:
     name: '{{ resilio_pkg }}'
     state: present

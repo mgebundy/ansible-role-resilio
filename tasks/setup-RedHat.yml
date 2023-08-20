@@ -12,7 +12,7 @@
     baseurl: https://linux-packages.resilio.com/resilio-sync/rpm/$basearch/
     gpgcheck: false
 
-- name: Install resiliso-sync
+- name: Install resilio-sync
   ansible.builtin.dnf:
     name: '{{ resilio_pkg }}'
     state: present

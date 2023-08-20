@@ -12,7 +12,7 @@
     filename: resilio-sync
     update_cache: true
 
-- name: Install resiliso-sync
+- name: Install resilio-sync
   ansible.builtin.apt:
     name: '{{ resilio_pkg }}'
     state: present
