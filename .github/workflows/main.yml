@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        distro:
+        scenario:
           - debian11
           - debian10
           - ubuntu2004
@@ -26,3 +26,8 @@ jobs:
         uses: actions/checkout@v3
 
       - uses: gofrolist/molecule-action@v2.4.0
+        with:
+          molecule_args: --scenario-name ${{ matrix.scenario }}
+        env:
+          PY_COLORS: '1'
+          ANSIBLE_FORCE_COLOR: '1'
