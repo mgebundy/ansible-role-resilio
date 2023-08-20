@@ -25,17 +25,4 @@ jobs:
       - name: Check out the codebase.
         uses: actions/checkout@v3
 
-      - name: Set up Python 3.
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.x'
-
-      - name: Install test dependencies.
-        run: pip3 install ansible-lint molecule[docker] pytest-testinfra yamllint
-
-      - name: Run Molecule tests.
-        run: molecule test -s default
-        env:
-          PY_COLORS: '1'
-          ANSIBLE_FORCE_COLOR: '1'
-          MOLECULE_DISTRO: ${{ matrix.distro }}
+      - uses: gofrolist/molecule-action@v2.4.0
