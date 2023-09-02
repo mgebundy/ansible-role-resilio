@@ -7,7 +7,7 @@ Role Variables
 
 ### Required Variables
 
-This role does noet requre any variables to be set but it's advised to change the web ui listen adress using the `webui_listen` variable.
+This role does noet requre any variables to be set but it's advised to change the web ui listen address using the `webui_listen` variable.
 
 ### Optional Variables
 

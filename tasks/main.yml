@@ -23,7 +23,7 @@
 - ansible.builtin.include_tasks: setup-Archlinux.yml
   when: ansible_os_family == 'Archlinux'
 
-- name: Enable Resilio Snyc
+- name: Enable Resilio Sync
   ansible.builtin.systemd:
     name: resilio-sync
     state: started

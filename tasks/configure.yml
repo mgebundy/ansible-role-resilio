@@ -1,11 +1,26 @@
 ---
 # code: language=ansible
+- name: Set up rslsync user
+  ansible.builtin.user:
+    name: rslsync
+    comment: Resilio Sync
+    shell: /usr/sbin/nologin
+    system: true
+    createhome: false
+    home: /var/lib/rslsync
+    state: present
+- name: Create folder
+  ansible.builtin.file:
+    path: /etc/resilio-sync
+    owner: rslsync
+    group: rslsync
+    state: directory
 - name: Configure Resilio Sync.
   ansible.builtin.template:
     src: rslsync.conf.j2
     dest: /etc/resilio-sync/config.json
-    owner: "rslsync"
-    group: "rslsync"
+    owner: rslsync
+    group: rslsync
     mode: 0600
   notify: Restart resilio-sync
   
